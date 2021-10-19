@@ -16,7 +16,7 @@ module "aws-functions" {
 
 policy "enforce-mandatory-tags" {
   source = "./enforce-mandatory-tags.sentinel"
-  enforcement_level = "soft mandatory"
+  enforcement_level = "advisory"
 }
 
 policy "protect-against-rds-instance-deletion" {
