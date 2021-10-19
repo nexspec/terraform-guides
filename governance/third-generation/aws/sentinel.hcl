@@ -16,7 +16,7 @@ module "aws-functions" {
 
 policy "enforce-mandatory-tags" {
   source = "./enforce-mandatory-tags.sentinel"
-  enforcement_level = "advisory"
+  enforcement_level = "soft mandatory"
 }
 
 policy "protect-against-rds-instance-deletion" {
@@ -34,25 +34,11 @@ policy "require-most-recent-AMI-version" {
   enforcement_level = "advisory"
 }
 
-policy "require-private-acl-and-kms-for-s3-buckets" {
-  source = "./require-private-acl-and-kms-for-s3-buckets.sentinel"
-  enforcement_level = "advisory"
-}
-
-policy "require-vpc-and-kms-for-lambda-functions" {
-  source = "./require-vpc-and-kms-for-lambda-functions.sentinel"
-  enforcement_level = "advisory"
-}
-
 policy "restrict-ami-owners" {
   source = "./restrict-ami-owners.sentinel"
   enforcement_level = "advisory"
 }
 
-policy "restrict-assumed-roles-by-workspace" {
-  source = "./restrict-assumed-roles-by-workspace.sentinel"
-  enforcement_level = "advisory"
-}
 
 policy "restrict-assumed-roles" {
   source = "./restrict-assumed-roles.sentinel"
@@ -84,11 +70,6 @@ policy "restrict-egress-sg-rule-cidr-blocks" {
   enforcement_level = "advisory"
 }
 
-policy "restrict-eks-node-group-size" {
-  source = "./restrict-eks-node-group-size.sentinel"
-  enforcement_level = "advisory"
-}
-
 policy "restrict-iam-policy-actions" {
   source = "./restrict-iam-policy-actions.sentinel"
   enforcement_level = "advisory"
@@ -116,11 +97,6 @@ policy "restrict-launch-configuration-instance-type" {
 
 policy "restrict-s3-bucket-policies" {
   source = "./restrict-s3-bucket-policies.sentinel"
-  enforcement_level = "advisory"
-}
-
-policy "restrict-sagemaker-notebooks" {
-  source = "./restrict-sagemaker-notebooks.sentinel"
   enforcement_level = "advisory"
 }
 
